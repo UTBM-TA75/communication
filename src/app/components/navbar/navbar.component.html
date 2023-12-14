@@ -1,11 +1,26 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Nom d'utilisateur</span>
-  <span class="example-spacer"></span>
+<div>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Nom d'utilisateur</span>
+    <span class="example-spacer"></span>
 
-  <button mat-icon-button>
-    <mat-icon>power_settings_new</mat-icon>
-  </button>
-</mat-toolbar>
+    <button mat-icon-button>
+      <mat-icon>power_settings_new</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-drawer-container>
+    <!-- Contenu de la sidebar -->
+    <mat-drawer
+      #drawer
+      mode="side"
+      [opened]="sidebarService.sidebarOpen$ | async"
+    >
+      <p>First communication module</p>
+    </mat-drawer>
+
+    <!-- Contenu principal -->
+    <ng-content />
+  </mat-drawer-container>
+</div>
