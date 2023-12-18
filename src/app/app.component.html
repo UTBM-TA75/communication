@@ -1,1 +1,19 @@
-<app-discussion></app-discussion>
+<app-navbar>
+  <!-- Contenu du tableau de bord à intégrer ici -->
+  <div class="grid grid-cols-3 grid-rows-2 gap-4 bg-white h-full">
+    <div class="row-span-2 bg-green-300 rounded-2xl my-3 ml-3">
+      <h1 class="text-center pt-3">Calendrier</h1>
+    </div>
+    <div class="bg-yellow-200 rounded-2xl mt-3">
+      <h1 class="text-center pt-3">Actualités</h1>
+    </div>
+    <div class="row-span-2 bg-blue-400 rounded-2xl my-3 mr-3">
+      <h1 class="text-center pt-3">Messagerie</h1>
+    </div>
+    <div class="col-start-2 bg-red-400 rounded-2xl mb-3">
+      <h1 class="text-center pt-3">Alertes</h1>
+    </div>
+  </div>
+</app-navbar>
+
+<router-outlet />
