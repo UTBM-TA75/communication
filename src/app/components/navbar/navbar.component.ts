@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatBadgeModule } from '@angular/material/badge';
 import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
@@ -15,6 +16,7 @@ import { SidebarService } from '../../services/sidebar.service';
     MatIconModule,
     MatSidenavModule,
     CommonModule,
+    MatBadgeModule,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
