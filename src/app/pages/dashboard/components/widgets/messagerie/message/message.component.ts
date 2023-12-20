@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './message.component.html',
   styleUrl: './message.component.scss',
 })
-export class MessageComponent {}
+export class MessageComponent {
+  // Expéditeur du message
+  username: string = 'SD';
+  lastMessage: string = 'Message mock';
+}

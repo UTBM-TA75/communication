@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
-import { SidebarService } from '../../services/sidebar.service';
+import { SidebarService } from '../../../services/sidebar.service';
 
 @Component({
   selector: 'app-navbar',
