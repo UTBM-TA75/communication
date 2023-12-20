@@ -1,1 +1,38 @@
-<p>discussion works!</p>
+
+
+<mat-sidenav-container class="h-4/6 border-2 border-black">
+  <mat-sidenav mode="side" opened class="bg-gray-200">
+    <!-- Votre contenu de barre latérale ici (si nécessaire) -->
+  </mat-sidenav>
+
+  <mat-sidenav-content class=" bg-amber-50 p-4 overflow-y-auto">
+    <div class="space-y-4">
+      @for (message of messages; track message.id) {
+        @if (isUserMessage(message.id)) {
+          <!-- Partie correspondant à un message utilisateur -->
+          <div class="flex justify-end">
+            <div class="bg-teal-400 pl-2 pr-2 rounded-lg text-black">
+              <p class="text-intermediate pt-3">{{ message.content }}</p>
+            </div>
+          </div>
+          <div style="margin-top: 0.1em;" class="flex justify-end"> <!-- Ajout de la marge pour simuler un retour à la ligne -->
+            <small><em>{{ message.timestamp | date: 'dd/MM/yyyy HH:mm' }}</em></small>
+          </div>
+
+
+        }
+        @if (!isUserMessage(message.id)) {
+          <div class="flex items-start">
+            <div class="bg-lime-100 pl-2 pr-2 rounded-lg text-black">
+            <p class="text-intermediate pt-3">{{ message.content }}</p>
+            </div>
+          </div>
+            <div style="margin-top: 0.1em;" class="flex justify-start"> <!-- Ajout de la marge pour simuler un retour à la ligne -->
+              <small><em>{{ message.timestamp | date: 'dd/MM/yyyy HH:mm' }}</em></small>
+            </div>
+
+        }
+      }
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

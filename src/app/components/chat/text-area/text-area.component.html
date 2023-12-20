@@ -1,0 +1,10 @@
+<!-- chat-input.component.html -->
+<mat-card class="w-full chat-input fixed bottom-0 max-w-screen-lg mx-auto">
+  <mat-card-content class="chat-input-content">
+    <textarea matInput placeholder="Tapez votre message ici..." [(ngModel)]="message" (keydown.enter)="sendMessage()" class="w-full p-2"></textarea>
+    <div class="chat-input-buttons">
+      <button mat-icon-button (click)="insertEmoji()"><mat-icon>insert_emoticon</mat-icon></button>
+      <button mat-icon-button (click)="insertDocument()"><mat-icon>insert_drive_file</mat-icon></button>
+    </div>
+  </mat-card-content>
+</mat-card>
