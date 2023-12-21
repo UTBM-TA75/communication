@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ConversationListComponent } from './components/widgets/chat/conversation-list/conversation-list.component';
+import { ConversationWidgetContainerComponent } from './components/widgets/chat/conversation-widget-container/conversation-widget-container.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ConversationListComponent],
+  imports: [ConversationWidgetContainerComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
