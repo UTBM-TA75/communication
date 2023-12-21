@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './conversation.component.scss',
 })
 export class ConversationComponent {
+  @Input() id: number = 1;
   @Input() username: string = 'Mock User';
   @Input() lastMessage: string = 'Mock last message';
   @Input() messageDate: string = '20/12/2023';
