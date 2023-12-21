@@ -3,16 +3,16 @@ import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-profile-preview',
   standalone: true,
   imports: [
     MatCardModule,
     MatIconModule
   ],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss'
+  templateUrl: './profile-preview.component.html',
+  styleUrl: './profile-preview.component.scss'
 })
-export class ProfileComponent {
+export class ProfilePreviewComponent {
   @Input() firstName: string = 'Romain';
   @Input() lastName: string = 'LESAGE';
   @Input() information: string = 'professeur de math';

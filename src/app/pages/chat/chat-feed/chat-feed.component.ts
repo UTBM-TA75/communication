@@ -2,19 +2,21 @@ import { Component } from '@angular/core';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {DatePipe} from "@angular/common";
+import {ChatBubbleComponent} from "../chat-bubble/chat-bubble.component";
 
 @Component({
-  selector: 'app-discussion',
+  selector: 'app-chat-feed',
   standalone: true,
   imports: [
     MatToolbarModule,
     MatSidenavModule,
-    DatePipe
+    DatePipe,
+    ChatBubbleComponent
   ],
-  templateUrl: './discussion.component.html',
-  styleUrl: './discussion.component.scss'
+  templateUrl: './chat-feed.component.html',
+  styleUrl: './chat-feed.component.scss'
 })
-export class DiscussionComponent {
+export class ChatFeedComponent {
   messages: { id: number; content: string; sentBy: 'user' | 'server'; timestamp: Date }[] = [
     { id: 1, content: 'Bonjour !', sentBy: 'user', timestamp: new Date('2023-12-01T08:30:00Z') },
     { id: 2, content: 'Bonjour, comment ça va ?', sentBy: 'server', timestamp: new Date('2023-12-01T08:35:00Z') },

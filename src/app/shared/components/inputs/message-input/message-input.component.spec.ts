@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileComponent } from './profile.component';
+import { MessageInputComponent } from './message-input.component';
 
-describe('ProfileComponent', () => {
-  let component: ProfileComponent;
-  let fixture: ComponentFixture<ProfileComponent>;
+describe('TextAreaComponent', () => {
+  let component: MessageInputComponent;
+  let fixture: ComponentFixture<MessageInputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProfileComponent]
+      imports: [MessageInputComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(ProfileComponent);
+
+    fixture = TestBed.createComponent(MessageInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
