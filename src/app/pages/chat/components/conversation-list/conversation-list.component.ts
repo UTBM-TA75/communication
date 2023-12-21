@@ -11,5 +11,5 @@ import { Discussion } from '../../../../core/models';
   styleUrl: './conversation-list.component.scss',
 })
 export class ConversationListComponent {
-  @Input() conversationList: Array<Discussion> = [];
+  @Input() conversationList!: Array<Discussion>;
 }
