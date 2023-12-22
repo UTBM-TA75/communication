@@ -1,9 +1,9 @@
-<h1 class="text-center pt-3">Calendrier</h1>
-<h2 class="px-2">Évènements à venir</h2>
 <div class="px-2 flex flex-col">
   <mat-card>
     <div class="flex flex-row px-3">
-      <app-date-ephemeris class="pt-4"/>
+      @if(ephemeris){
+        <app-date-ephemeris [date]="calendarEvent.startDate"  class="pt-4"/>
+      }
       <div class="object-fill">
         <mat-card-header>
           <mat-card-title>{{ calendarEvent.startDate | date:"hh'h'mm" }} - {{ calendarEvent.title }}</mat-card-title>

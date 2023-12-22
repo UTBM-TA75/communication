@@ -13,5 +13,5 @@ import {DatePipe, LowerCasePipe, UpperCasePipe} from "@angular/common";
   styleUrl: './date-ephemeris.component.scss'
 })
 export class DateEphemerisComponent {
-  @Input() date: string = "2023-12-20";
+  @Input() date!: Date;
 }

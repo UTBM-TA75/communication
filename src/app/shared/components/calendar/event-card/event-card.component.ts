@@ -1,7 +1,7 @@
 import {booleanAttribute, Component, Input} from '@angular/core';
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
-import {DateEphemerisComponent} from "@shared/components/date-ephemeris/date-ephemeris.component";
+import {DateEphemerisComponent} from "@shared/components/calendar/date-ephemeris/date-ephemeris.component";
 import {DatePipe} from "@angular/common";
 import {CalendarEvent} from "@core/models/event.model";
 
