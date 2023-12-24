@@ -12,5 +12,5 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'communication';
+  title = 'Communication';
 }
