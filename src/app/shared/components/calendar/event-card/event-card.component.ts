@@ -10,7 +10,6 @@ import {CalendarEvent} from "@core/models/event.model";
   standalone: true,
   imports: [MatCardModule, MatIconModule, DateEphemerisComponent, DatePipe],
   templateUrl: './event-card.component.html',
-  styleUrl: './event-card.component.scss'
 })
 export class EventCardComponent {
   @Input({transform: booleanAttribute}) ephemeris: boolean = false;
