@@ -13,7 +13,6 @@ import {CalendarEvent} from "@core/models/event.model";
   styleUrl: './event-card.component.scss'
 })
 export class EventCardComponent {
-  // todo implement me in the template html
-  @Input({transform: booleanAttribute}) ephemeris: boolean = true;
+  @Input({transform: booleanAttribute}) ephemeris: boolean = false;
   @Input() calendarEvent!: CalendarEvent;
 }
