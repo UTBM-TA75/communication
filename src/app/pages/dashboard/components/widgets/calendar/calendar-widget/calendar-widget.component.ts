@@ -18,13 +18,17 @@ export class CalendarWidgetComponent implements OnInit {
   futureEvents: Array<CalendarEvent> = [];
 
   ngOnInit(): void {
+    this.filterEvents();
+  }
+
+  filterEvents(): void {
     let today: Date = new Date(Date.now());
-    this.eventList?.forEach((value) => {
-      if (value.startDate.getDay() == today.getDay() && value.startDate.getMonth() == today.getMonth() && value.startDate.getFullYear() == today.getFullYear()) {
+    this.eventList?.forEach((value: CalendarEvent): void => {
+      if(value.startDate.getDay() == today.getDay() && value.startDate.getMonth() == today.getMonth() && value.startDate.getFullYear() == today.getFullYear()){
         this.todayEvents.push(value);
-      } else if (value.startDate > today) {
+      } else if(value.startDate > today){
         this.futureEvents.push(value);
       }
-    });
+    })
   }
 }
