@@ -8,10 +8,9 @@ describe('DateEphemerisComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DateEphemerisComponent]
-    })
-    .compileComponents();
-    
+      imports: [DateEphemerisComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DateEphemerisComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

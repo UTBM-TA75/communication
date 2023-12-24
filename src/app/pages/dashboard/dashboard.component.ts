@@ -1,7 +1,5 @@
-import {Component} from '@angular/core';
-import {
-  CalendarWidgetContainerComponent
-} from "./components/widgets/calendar/calendar-widget-container/calendar-widget-container.component";
+import { Component } from '@angular/core';
+import { CalendarWidgetContainerComponent } from './components/widgets/calendar/calendar-widget-container/calendar-widget-container.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,5 +8,4 @@ import {
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
-export class DashboardComponent {
-}
+export class DashboardComponent {}
