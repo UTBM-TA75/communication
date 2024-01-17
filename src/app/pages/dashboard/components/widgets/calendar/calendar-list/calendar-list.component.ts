@@ -7,7 +7,6 @@ import { EventCardComponent } from '@shared/components/calendar/event-card/event
   standalone: true,
   imports: [EventCardComponent],
   templateUrl: './calendar-list.component.html',
-  styleUrl: './calendar-list.component.scss',
 })
 export class CalendarListComponent {
   @Input() events!: CalendarEvent[] | null;
