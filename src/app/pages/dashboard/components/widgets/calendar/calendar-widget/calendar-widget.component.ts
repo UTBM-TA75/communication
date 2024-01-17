@@ -7,7 +7,6 @@ import { CalendarEvent } from '@core/models/event.model';
   standalone: true,
   imports: [CalendarListComponent],
   templateUrl: './calendar-widget.component.html',
-  styleUrl: './calendar-widget.component.scss',
 })
 export class CalendarWidgetComponent implements OnInit {
   @Input() eventList!: Array<CalendarEvent> | null;
