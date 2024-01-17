@@ -16,7 +16,9 @@
     <span class="pr-8">
       <button mat-icon-button>
         <!-- TODO: Changer la valeur de matBadge quand l'API sera mise en place -->
-        <mat-icon matBadge="14" matBadgeColor="warn">notifications</mat-icon>
+        <mat-icon matBadge="14" matBadgeColor="warn" aria-hidden="false"
+          >notifications</mat-icon
+        >
       </button>
     </span>
     <button mat-icon-button>
@@ -34,7 +36,7 @@
       <p>First communication module</p>
     </mat-drawer>
 
-    <div class="h-[93vh]">
+    <div class="h-[93.6vh]">
       <ng-content />
     </div>
   </mat-drawer-container>
