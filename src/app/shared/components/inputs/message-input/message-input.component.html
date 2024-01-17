@@ -1,9 +1,17 @@
 <!-- chat-input.component.html -->
 <mat-card class="w-full fixed bottom-0 max-w-screen-lg mx-auto">
   <mat-card-content>
-    <textarea matInput placeholder="Tapez votre message ici..." [(ngModel)]="message" (keydown.enter)="sendMessage()" class="w-full p-2"></textarea>
+    <textarea
+      matInput
+      placeholder="Tapez votre message ici..."
+      [(ngModel)]="message"
+      (keydown.enter)="sendMessage()"
+      class="w-full p-2"
+    ></textarea>
     <div>
-      <button mat-icon-button (click)="sendMessage()" color="primary"><mat-icon>send</mat-icon></button>
+      <button mat-icon-button (click)="sendMessage()" color="primary">
+        <mat-icon>send</mat-icon>
+      </button>
     </div>
   </mat-card-content>
 </mat-card>
