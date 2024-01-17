@@ -6,7 +6,7 @@ import { CalendarEvent } from '@core/models/event.model';
   providedIn: 'root',
 })
 export class EventService {
-  private events$: Observable<CalendarEvent[]>;
+  private readonly events$: Observable<CalendarEvent[]>;
 
   private events: Array<CalendarEvent> = [
     {
