@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
+  //TODO : replace me with the real value
   private token: string = 'replace-me';
 
   constructor() {}
