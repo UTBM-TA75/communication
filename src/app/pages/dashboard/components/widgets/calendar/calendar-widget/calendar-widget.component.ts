@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CalendarListComponent } from '../calendar-list/calendar-list.component';
-import { CalendarEvent } from '@core/models/event.model';
+import { Event } from '@core/models';
 
 @Component({
   selector: 'app-calendar-widget',
@@ -9,10 +9,10 @@ import { CalendarEvent } from '@core/models/event.model';
   templateUrl: './calendar-widget.component.html',
 })
 export class CalendarWidgetComponent implements OnInit {
-  @Input() eventList!: Array<CalendarEvent> | null;
+  @Input() eventList!: Array<Event>;
 
-  todayEvents: Array<CalendarEvent> = [];
-  futureEvents: Array<CalendarEvent> = [];
+  todayEvents: Array<Event> = [];
+  futureEvents: Array<Event> = [];
 
   ngOnInit(): void {
     this.filterEvents();
@@ -20,14 +20,15 @@ export class CalendarWidgetComponent implements OnInit {
 
   filterEvents(): void {
     const today: Date = new Date(Date.now());
-    this.eventList?.forEach((value: CalendarEvent): void => {
+    this.eventList?.forEach((value: Event): void => {
+      console.log(typeof value == typeof Event);
       if (
-        value.startDate.getDay() == today.getDay() &&
-        value.startDate.getMonth() == today.getMonth() &&
-        value.startDate.getFullYear() == today.getFullYear()
+        value.beginning.getDay() == today.getDay() &&
+        value.beginning.getMonth() == today.getMonth() &&
+        value.beginning.getFullYear() == today.getFullYear()
       ) {
         this.todayEvents.push(value);
-      } else if (value.startDate > today) {
+      } else if (value.beginning > today) {
         this.futureEvents.push(value);
       }
     });

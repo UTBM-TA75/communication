@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CalendarWidgetContainerComponent } from './calendar-widget-container.component';
+import { HttpClient } from '@angular/common/http';
 
 describe('CalendarContainerComponent', () => {
   let component: CalendarWidgetContainerComponent;

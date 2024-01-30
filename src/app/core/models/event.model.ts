@@ -1,8 +1,13 @@
-export interface CalendarEvent {
+interface Event {
   id: number;
   title: string;
   description?: string;
   location?: string;
-  startDate: Date;
-  endDate: Date;
+  beginning: Date;
+  end: Date;
+  createdBy: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
+
+export default Event;
