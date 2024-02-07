@@ -1,5 +1,18 @@
-<app-profile-preview />
-<app-chat-feed />
-<div class="pt-10">
-  <app-message-input />
+<div class="container">
+  <!-- Sidebar (15% width) -->
+  <div class="sidebar">
+    <app-conversation-widget-container></app-conversation-widget-container>
+  </div>
+  <!-- Main Content (85% width) -->
+  <div class="main-content">
+    <div>
+      <app-profile-preview></app-profile-preview>
+    </div>
+    <div class="chat-feed">
+      <app-chat-feed></app-chat-feed>
+    </div>
+    <div>
+      <app-message-input></app-message-input>
+    </div>
+  </div>
 </div>
