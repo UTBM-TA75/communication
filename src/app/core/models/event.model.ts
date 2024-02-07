@@ -3,8 +3,8 @@ interface Event {
   title: string;
   description?: string;
   location?: string;
-  beginning: Date;
-  end: Date;
+  beginning: string;
+  end: string;
   createdBy: string;
   createdAt: Date;
   updatedAt: Date;

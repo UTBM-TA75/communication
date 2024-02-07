@@ -4,6 +4,7 @@ import { Event } from '@core/models';
 import { AsyncPipe } from '@angular/common';
 import { EventService } from '@core/services/event.service';
 import { CalendarWidgetComponent } from '../calendar-widget/calendar-widget.component';
+import { D } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-calendar-widget-container',
@@ -22,7 +23,10 @@ export class CalendarWidgetContainerComponent implements OnInit {
 
   constructor(private eventService: EventService) {}
 
+  start = new Date(Date.now());
+  end = new Date();
+
   ngOnInit() {
-    this.events$ = this.eventService.getEvents();
+    this.events$ = this.eventService.getEvents(this.start, this.end);
   }
 }

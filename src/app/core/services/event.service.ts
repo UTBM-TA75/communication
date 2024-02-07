@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Event } from '@core/models';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { AppConfigService } from '@core/config/app-config.service';
+import { formatDate } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -16,14 +17,22 @@ export class EventService {
   ) {}
 
   getEvents(startsBefore?: Date, starsAfter?: Date): Observable<Event[]> {
-    const params = new HttpParams();
+    let params = new HttpParams();
     if (startsBefore) {
-      params.set('starts_before', startsBefore.toString());
+      params = params.append(
+        'starts_before',
+        formatDate(startsBefore, 'YYYY-MM-dd', 'EN'),
+      );
     }
     if (starsAfter) {
-      params.set('starts_after', starsAfter.toString());
+      params = params.append(
+        'starts_after',
+        formatDate(starsAfter, 'YYYY-MM-dd', 'EN'),
+      );
     }
 
-    return this.http.get<Event[]>(this.appConfig.apiUrl + this.path);
+    return this.http.get<Event[]>(this.appConfig.apiUrl + this.path, {
+      params,
+    });
   }
 }

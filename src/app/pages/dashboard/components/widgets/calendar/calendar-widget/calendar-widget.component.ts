@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CalendarListComponent } from '../calendar-list/calendar-list.component';
 import { Event } from '@core/models';
+import { D } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-calendar-widget',
@@ -15,6 +16,7 @@ export class CalendarWidgetComponent implements OnInit {
   futureEvents: Array<Event> = [];
 
   ngOnInit(): void {
+    console.log(this.eventList);
     this.filterEvents();
   }
 
@@ -22,13 +24,14 @@ export class CalendarWidgetComponent implements OnInit {
     const today: Date = new Date(Date.now());
     this.eventList?.forEach((value: Event): void => {
       console.log(typeof value == typeof Event);
+      const beg = new Date(Date.parse(value.beginning));
       if (
-        value.beginning.getDay() == today.getDay() &&
-        value.beginning.getMonth() == today.getMonth() &&
-        value.beginning.getFullYear() == today.getFullYear()
+        beg.getDay() == today.getDay() &&
+        beg.getMonth() == today.getMonth() &&
+        beg.getFullYear() == today.getFullYear()
       ) {
         this.todayEvents.push(value);
-      } else if (value.beginning > today) {
+      } else if (beg > today) {
         this.futureEvents.push(value);
       }
     });
