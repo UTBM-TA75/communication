@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CalendarListComponent } from '../calendar-list/calendar-list.component';
 import { Event } from '@core/models';
-import { D } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-calendar-widget',

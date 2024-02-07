@@ -6,8 +6,8 @@ interface Event {
   beginning: string;
   end: string;
   createdBy: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export default Event;
