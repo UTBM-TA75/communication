@@ -15,14 +15,12 @@ export class CalendarWidgetComponent implements OnInit {
   futureEvents: Array<Event> = [];
 
   ngOnInit(): void {
-    console.log(this.eventList);
     this.filterEvents();
   }
 
   filterEvents(): void {
     const today: Date = new Date(Date.now());
     this.eventList?.forEach((value: Event): void => {
-      console.log(typeof value == typeof Event);
       const beg = new Date(Date.parse(value.beginning));
       if (
         beg.getDay() == today.getDay() &&
