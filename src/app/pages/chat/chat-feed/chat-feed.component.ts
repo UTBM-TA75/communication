@@ -17,7 +17,7 @@ import {ChatBubbleComponent} from "../chat-bubble/chat-bubble.component";
   styleUrl: './chat-feed.component.scss'
 })
 export class ChatFeedComponent {
-  messages: { id: number; content: string; sentBy: 'user' | 'server'; timestamp: Date }[] = [
+  Messages: { id: number; content: string; sentBy: 'user' | 'server'; timestamp: Date }[] = [
     { id: 1, content: 'Bonjour !', sentBy: 'user', timestamp: new Date('2023-12-01T08:30:00Z') },
     { id: 2, content: 'Bonjour, comment ça va ?', sentBy: 'server', timestamp: new Date('2023-12-01T08:35:00Z') },
     { id: 3, content: 'Ça va bien, merci !', sentBy: 'user', timestamp: new Date('2023-12-01T08:40:00Z') },
@@ -28,7 +28,7 @@ export class ChatFeedComponent {
 
 
   isUserMessage(messageId: number): boolean {
-    const message = this.messages.find(msg => msg.id === messageId);
+    const message = this.Messages.find(msg => msg.id === messageId);
     return message?.sentBy === 'user';
   }
 }
