@@ -4,7 +4,8 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { DatePipe } from "@angular/common";
 import { ChatBubbleComponent } from "../chat-bubble/chat-bubble.component";
 import { ChatService } from '@core/services/chat.service';
-import { Message } from "@core/models"; // Vérifiez que le chemin est correct
+import { Message } from "@core/models";
+import { AuthService } from "@core/services/auth.service"; // Vérifiez que le chemin est correct
 
 @Component({
   selector: 'app-chat-feed',
@@ -21,10 +22,9 @@ import { Message } from "@core/models"; // Vérifiez que le chemin est correct
 export class ChatFeedComponent {
   @Input() messages: Message[] = [];
 
-  constructor(private chatService: ChatService) { }
+  constructor(private chatService: ChatService, private authService: AuthService) { }
 
   isUserMessage(messageId: number): boolean {
-    const message = this.messages.find(msg => msg.id === messageId);
-    return true;
+    return this.authService.user.id == messageId;
   }
 }
