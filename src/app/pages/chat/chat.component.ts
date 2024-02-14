@@ -8,6 +8,7 @@ import { map, Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '@core/services/user.service';
+import { MessageService } from '@core/services/message.service';
 
 @Component({
   selector: 'app-chat',
@@ -26,8 +27,11 @@ export class ChatComponent implements OnInit {
   messages$!: Observable<Message[]>;
   user$!: Observable<User>;
 
+  private discussionId!: number;
+
   constructor(
     private userService: UserService,
+    private messageService: MessageService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
   ) {}
@@ -40,6 +44,7 @@ export class ChatComponent implements OnInit {
       map(({ messages }) => messages),
     );
     this.discussion$.subscribe((value) => {
+      this.discussionId = value.id;
       this.user$ = this.userService.getUser(value.user2);
     });
   }
@@ -47,5 +52,12 @@ export class ChatComponent implements OnInit {
   onConversationItemClicked(discussion: Discussion) {
     this.router.navigate(['chat', discussion.id]);
     this.ngOnInit();
+  }
+
+  addMessage(content: string) {
+    this.messages$ = this.messageService.postMessage(this.discussionId, {
+      content: content,
+      sentBy: 1,
+    });
   }
 }

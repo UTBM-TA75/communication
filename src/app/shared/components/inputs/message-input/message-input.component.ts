@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ProfilePreviewComponent } from '../../profile/profile-preview/profile-preview.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { MessageService } from '@core/services/message.service';
-import { AuthService } from '@core/services/auth.service';
 import { ConversationFeedComponent } from '@shared/conversation/components/conversation-feed/conversation-feed.component'; // Assurez-vous d'utiliser le bon chemin
 
 @Component({
@@ -25,29 +23,11 @@ import { ConversationFeedComponent } from '@shared/conversation/components/conve
   styleUrl: './message-input.component.scss',
 })
 export class MessageInputComponent {
-  message: string = ''; // Initialisation de la propriété message
+  @Output() messageSent = new EventEmitter<string>();
+  content: string = ''; // Initialisation de la propriété message
 
-  constructor(
-    private chatService: MessageService,
-    private authService: AuthService,
-  ) {}
-
-  /*sendMessage() {
-    if (this.message.trim()) {
-      // Vérifie si le message n'est pas juste des espaces
-      this.chatService.addMessage({
-        content: this.message,
-        sentBy: this.authService.user.id,
-      });
-      this.message = ''; // Nettoie le champ de texte après l'envoi
-    }
-  }*/
-
-  // Pour empêcher le formulaire de soumettre/recharger la page lors de l'appui sur "Entrée"
-  /*  handleEnter(event: KeyboardEvent) {
-    if (event.key === 'Enter') {
-      event.preventDefault(); // Empêche le comportement par défaut (saut de ligne ou soumission de formulaire)
-      this.sendMessage();
-    }
-  }*/
+  onNewMessage() {
+    this.messageSent.emit(this.content);
+    this.content = '';
+  }
 }

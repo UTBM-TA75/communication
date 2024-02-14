@@ -29,4 +29,17 @@ export class MessageService {
       this.appConfig.apiUrl + this.path(discussionId),
     );
   }
+
+  postMessage(
+    discussionId: number,
+    message: Partial<Message>,
+  ): Observable<Message[]> {
+    console.log(this.appConfig.apiUrl + this.path(discussionId));
+    return this.http.post<Message[]>(
+      this.appConfig.apiUrl + this.path(discussionId),
+      {
+        ...message,
+      },
+    );
+  }
 }

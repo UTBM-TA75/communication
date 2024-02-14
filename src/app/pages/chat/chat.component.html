@@ -9,10 +9,10 @@
       <app-profile-preview [username]="user.username" />
     }
     @if (messages$ | async; as messages) {
-      <app-conversation-feed class="h-full" [messages]="messages" />
+      <app-conversation-feed class="h-auto" [messages]="messages" />
     }
 
-    <app-message-input/>
+    <app-message-input (messageSent)="addMessage($event)"/>
 
   </div>
 </div>
