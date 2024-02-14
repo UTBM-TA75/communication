@@ -1,18 +1,18 @@
-<div class="container">
-  <!-- Sidebar (15% width) -->
-  <div class="sidebar">
-    <app-conversation-list-container (conversationItemClicked)="onConversationItemClicked($event)"></app-conversation-list-container>
+<div class="flex">
+  <div class="w-1/4">
+    <app-conversation-list-container
+      (conversationItemClicked)="onConversationItemClicked($event)"
+    ></app-conversation-list-container>
   </div>
-  <!-- Main Content (85% width) -->
-  <div class="main-content">
-    <div>
-      <app-profile-preview></app-profile-preview>
-    </div>
-    <div class="chat-feed">
-      <app-conversation-feed [messages]="messages"></app-conversation-feed>
-    </div>
-    <div>
-      <app-message-input></app-message-input>
-    </div>
+  <div class="w-3/4">
+    @if (user$ | async; as user) {
+      <app-profile-preview [username]="user.username" />
+    }
+    @if (messages$ | async; as messages) {
+      <app-conversation-feed class="h-full" [messages]="messages" />
+    }
+
+    <app-message-input/>
+
   </div>
 </div>

@@ -16,7 +16,9 @@
   >
     <h1 class="text-center pt-3"><a routerLink="/chat">Messagerie</a></h1>
     @defer {
-      <app-conversation-list-container (conversationItemClicked)="onConversationItemClicked($event)" />
+      <app-conversation-list-container
+        (conversationItemClicked)="onConversationItemClicked($event)"
+      />
     }
   </div>
   <div class="col-start-2 bg-red-400 bg-opacity-60 rounded-2xl mb-3 shadow-xl">

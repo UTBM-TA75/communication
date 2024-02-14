@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { ConversationFeedComponent } from '@shared/components/conversation/conversation-feed/conversation-feed.component';
 import { ProfilePreviewComponent } from '../../profile/profile-preview/profile-preview.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MessageService } from '@core/services/message.service';
-import { AuthService } from '@core/services/auth.service'; // Assurez-vous d'utiliser le bon chemin
+import { AuthService } from '@core/services/auth.service';
+import { ConversationFeedComponent } from '@shared/conversation/components/conversation-feed/conversation-feed.component'; // Assurez-vous d'utiliser le bon chemin
 
 @Component({
   selector: 'app-message-input',
@@ -32,7 +32,7 @@ export class MessageInputComponent {
     private authService: AuthService,
   ) {}
 
-  sendMessage() {
+  /*sendMessage() {
     if (this.message.trim()) {
       // Vérifie si le message n'est pas juste des espaces
       this.chatService.addMessage({
@@ -41,13 +41,13 @@ export class MessageInputComponent {
       });
       this.message = ''; // Nettoie le champ de texte après l'envoi
     }
-  }
+  }*/
 
   // Pour empêcher le formulaire de soumettre/recharger la page lors de l'appui sur "Entrée"
-  handleEnter(event: KeyboardEvent) {
+  /*  handleEnter(event: KeyboardEvent) {
     if (event.key === 'Enter') {
       event.preventDefault(); // Empêche le comportement par défaut (saut de ligne ou soumission de formulaire)
       this.sendMessage();
     }
-  }
+  }*/
 }

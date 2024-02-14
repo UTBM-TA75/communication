@@ -1,9 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ConversationListComponent } from '@shared/components/conversation/conversation-list/conversation-list.component';
 import { Discussion } from '@core/models';
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { DiscussionService } from '@core/services/discussion.service';
+import { ConversationListComponent } from '@shared/conversation/components/conversation-list/conversation-list.component';
 
 @Component({
   selector: 'app-conversation-list-container',

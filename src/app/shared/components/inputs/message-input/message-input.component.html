@@ -5,10 +5,9 @@
       matInput
       placeholder="Tapez votre message ici..."
       [(ngModel)]="message"
-      (keydown.enter)="sendMessage()"
       class="w-5/6 p-2"
     ></textarea>
-    <button mat-icon-button (click)="sendMessage()" color="primary">
+    <button mat-icon-button color="primary">
       <mat-icon>send</mat-icon>
     </button>
   </mat-card-content>

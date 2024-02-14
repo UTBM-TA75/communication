@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ConversationListItemComponent } from '@shared/components/conversation/conversation-list-item/conversation-list-item.component';
 import { CommonModule } from '@angular/common';
 import { Discussion } from '@core/models';
+import { ConversationListItemComponent } from '@shared/conversation/components/conversation-list-item/conversation-list-item.component';
 
 @Component({
   selector: 'app-conversation-list',
