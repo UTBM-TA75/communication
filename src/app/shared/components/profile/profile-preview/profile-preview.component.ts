@@ -16,7 +16,7 @@ export class ProfilePreviewComponent {
     firstName: 'Romain',
     lastName: 'LESAGE',
     information: 'Professeur de maths',
-    photoUrl: ''
+    photoUrl: '',
   };
 
   constructor() {}
