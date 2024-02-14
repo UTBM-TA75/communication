@@ -5,4 +5,5 @@ interface Message {
   sentAt: Date;
   seenAt?: Date;
 }
+
 export default Message;
