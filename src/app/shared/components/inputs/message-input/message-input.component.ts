@@ -30,7 +30,7 @@ export class MessageInputComponent {
 
   sendMessage() {
     if (this.message.trim()) { // Vérifie si le message n'est pas juste des espaces
-      this.chatService.addMessage({ content: this.message, sentBy: 'user' });
+      this.chatService.addMessage({ content: this.message, sentBy: 1 });
       this.message = ''; // Nettoie le champ de texte après l'envoi
     }
   }

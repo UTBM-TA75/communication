@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {DatePipe} from "@angular/common";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import { Message } from "@core/models";
 
 @Component({
   selector: 'app-chat-bubble',
@@ -13,11 +14,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
   styleUrl: './chat-bubble.component.scss'
 })
 export class ChatBubbleComponent {
-  @Input() message!: { id: number; content: string; sentBy: 'user' | 'server'; timestamp: Date };
+  @Input() message!: Message;
   @Input() isUserMessage!: boolean;
   @Input() position!: string;
   @Input() style!: string;
-
-
-
 }

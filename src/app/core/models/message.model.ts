@@ -1,8 +1,8 @@
-interface Messages {
+interface Message {
   id: number;
   content: string;
   sentBy: number;
   sentAt: Date;
-  seenAt: Date;
+  seenAt?: Date;
 }
-export default Messages;
+export default Message;
