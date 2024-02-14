@@ -1,7 +1,8 @@
 interface Messages {
   id: number;
   content: string;
-  sentBy: 'user' | 'server';
-  timestamp: Date;
+  sentBy: number;
+  sentAt: Date;
+  seenAt: Date;
 }
 export default Messages;

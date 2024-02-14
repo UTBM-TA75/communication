@@ -6,6 +6,7 @@ import {ChatFeedComponent} from "../../../../pages/chat/chat-feed/chat-feed.comp
 import {ProfilePreviewComponent} from "../../profile/profile-preview/profile-preview.component";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
+import { ChatService } from '@core/services/chat.service'; // Assurez-vous d'utiliser le bon chemin
 
 @Component({
   selector: 'app-message-input',
@@ -23,16 +24,22 @@ import {MatInputModule} from "@angular/material/input";
   styleUrl: './message-input.component.scss'
 })
 export class MessageInputComponent {
-  message: string = '';
+  message: string = ''; // Initialisation de la propriété message
 
-  constructor() {}
+  constructor(private chatService: ChatService) { }
 
-  sendMessage(event?: KeyboardEvent): void {
-    // Vérifie si la touche pressée est 'Entrée'
-    if (event?.key === 'Enter') {
-      event.preventDefault();
+  sendMessage() {
+    if (this.message.trim()) { // Vérifie si le message n'est pas juste des espaces
+      this.chatService.addMessage({ content: this.message, sentBy: 'user' });
+      this.message = ''; // Nettoie le champ de texte après l'envoi
     }
+  }
 
-    this.message = '';
+  // Pour empêcher le formulaire de soumettre/recharger la page lors de l'appui sur "Entrée"
+  handleEnter(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Empêche le comportement par défaut (saut de ligne ou soumission de formulaire)
+      this.sendMessage();
+    }
   }
 }
