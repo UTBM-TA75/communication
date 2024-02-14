@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { AppConfigService } from '@core/config/app-config.service';
 import { Discussion } from '@core/models';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class DiscussionService {
   private readonly path = '/discussions';
 

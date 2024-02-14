@@ -9,6 +9,7 @@ import { DiscussionService } from '@core/services/discussion.service';
   selector: 'app-conversation-list-container',
   standalone: true,
   imports: [AsyncPipe, ConversationListComponent],
+  providers: [DiscussionService],
   template: `
     @if (discussions$ | async; as discussions) {
       <app-conversation-list

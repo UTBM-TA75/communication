@@ -3,6 +3,7 @@ import { CalendarWidgetContainerComponent } from './components/widgets/calendar/
 import { ConversationListContainerComponent } from '@shared/components/conversation/conversation-list-container/conversation-list-container.component';
 import { Router, RouterLink } from '@angular/router';
 import { Discussion } from '@core/models';
+import { EventService } from '@core/services/event.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +13,7 @@ import { Discussion } from '@core/models';
     ConversationListContainerComponent,
     RouterLink,
   ],
+  providers: [EventService],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })

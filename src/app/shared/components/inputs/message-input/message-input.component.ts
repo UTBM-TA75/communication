@@ -6,7 +6,7 @@ import { ConversationFeedComponent } from '@shared/components/conversation/conve
 import { ProfilePreviewComponent } from '../../profile/profile-preview/profile-preview.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { ChatService } from '@core/services/chat.service';
+import { MessageService } from '@core/services/message.service';
 import { AuthService } from '@core/services/auth.service'; // Assurez-vous d'utiliser le bon chemin
 
 @Component({
@@ -28,7 +28,7 @@ export class MessageInputComponent {
   message: string = ''; // Initialisation de la propriété message
 
   constructor(
-    private chatService: ChatService,
+    private chatService: MessageService,
     private authService: AuthService,
   ) {}
 

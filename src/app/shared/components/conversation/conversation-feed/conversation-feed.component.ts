@@ -3,7 +3,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DatePipe } from '@angular/common';
 import { ConversationBubbleComponent } from '../conversation-bubble/conversation-bubble.component';
-import { ChatService } from '@core/services/chat.service';
 import { Message } from '@core/models';
 import { AuthService } from '@core/services/auth.service'; // Vérifiez que le chemin est correct
 
@@ -22,10 +21,7 @@ import { AuthService } from '@core/services/auth.service'; // Vérifiez que le c
 export class ConversationFeedComponent {
   @Input() messages: Message[] = [];
 
-  constructor(
-    private chatService: ChatService,
-    private authService: AuthService,
-  ) {}
+  constructor(private authService: AuthService) {}
 
   isUserMessage(messageId: number): boolean {
     return this.authService.user.id == messageId;
