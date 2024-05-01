@@ -1,9 +1,17 @@
 <div>
   <mat-toolbar color="primary">
-    <button mat-icon-button (click)="onMenuItemClick('/')">
+    <button
+      mat-icon-button
+      (click)="onMenuItemClick('/')"
+      class="hover:scale-125 duration-300 transition-transform"
+    >
       <mat-icon>home</mat-icon>
     </button>
-    <button mat-icon-button (click)="toggleSidebar()">
+    <button
+      mat-icon-button
+      (click)="toggleSidebar()"
+      class="hover:scale-125 duration-300 transition-transform"
+    >
       <mat-icon>menu</mat-icon>
     </button>
 
@@ -25,7 +33,10 @@
         >
       </button>
     </span>
-    <button mat-icon-button>
+    <button
+      mat-icon-button
+      class="hover:scale-125 duration-300 transition-transform"
+    >
       <mat-icon>power_settings_new</mat-icon>
     </button>
   </mat-toolbar>
@@ -43,6 +54,7 @@
           extended
           color="primary"
           (click)="onMenuItemClick('/alerts')"
+          class="hover:scale-110"
         >
           <mat-icon>notifications</mat-icon>
           Alertes
@@ -52,7 +64,7 @@
           mat-fab
           extended
           color="primary"
-          class="my-10"
+          class="my-10 hover:scale-110"
           (click)="onMenuItemClick('/news')"
         >
           <mat-icon>list</mat-icon>
@@ -63,7 +75,7 @@
           mat-fab
           extended
           color="primary"
-          class="mb-10"
+          class="mb-10 hover:scale-110"
           (click)="onMenuItemClick('/calendar')"
         >
           <mat-icon>calendar_today</mat-icon>
@@ -74,6 +86,7 @@
           mat-fab
           extended
           color="primary"
+          class="hover:scale-110"
           (click)="onMenuItemClick('/chat')"
         >
           <mat-icon>message</mat-icon>
