@@ -1,9 +1,13 @@
 <div>
   <mat-toolbar color="primary">
+    <button mat-icon-button (click)="onMenuItemClick('/')">
+      <mat-icon>home</mat-icon>
+    </button>
     <button mat-icon-button (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>Nom d'utilisateur</span>
+
+    <span class="ml-3">Nom d'utilisateur</span>
     <button>
       <span class="pl-[7rem] underline underline-offset-4">Enfant n°1</span>
     </button>
@@ -31,9 +35,51 @@
       #drawer
       mode="over"
       [opened]="sidebarService.sidebarOpen$ | async"
+      class="w-[12%]"
     >
-      <!-- Sidebar -->
-      <p>First communication module</p>
+      <div class="w-[100%] h-[100%] flex flex-col justify-center items-center">
+        <button
+          mat-fab
+          extended
+          color="primary"
+          (click)="onMenuItemClick('/alerts')"
+        >
+          <mat-icon>notifications</mat-icon>
+          Alertes
+        </button>
+
+        <button
+          mat-fab
+          extended
+          color="primary"
+          class="my-10"
+          (click)="onMenuItemClick('/news')"
+        >
+          <mat-icon>list</mat-icon>
+          Actualités
+        </button>
+
+        <button
+          mat-fab
+          extended
+          color="primary"
+          class="mb-10"
+          (click)="onMenuItemClick('/calendar')"
+        >
+          <mat-icon>calendar_today</mat-icon>
+          Calendrier
+        </button>
+
+        <button
+          mat-fab
+          extended
+          color="primary"
+          (click)="onMenuItemClick('/chat')"
+        >
+          <mat-icon>message</mat-icon>
+          Messagerie
+        </button>
+      </div>
     </mat-drawer>
 
     <div class="h-[93.6vh]">
