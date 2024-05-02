@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class NewsService {
-  private readonly path = '/news';
+  private readonly path = '/communications';
 
   constructor(
     private http: HttpClient,
