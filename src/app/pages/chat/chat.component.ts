@@ -21,6 +21,7 @@ import { MessageService } from '@core/services/message.service';
     AsyncPipe,
   ],
   templateUrl: './chat.component.html',
+  styleUrl: './chat.component.scss',
 })
 export class ChatComponent implements OnInit {
   discussion$!: Observable<Discussion>;

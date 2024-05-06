@@ -11,4 +11,8 @@ export const routes: Routes = [
     component: ChatComponent,
     resolve: { messages: messagesResolver, discussion: discussionResolver },
   },
+  {
+    path: 'chat',
+    component: ChatComponent,
+  },
 ];
