@@ -6,13 +6,13 @@ import { discussionResolver } from '@shared/conversation/resolvers/discussion.re
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
+  { path: 'chat', component: ChatComponent },
   {
     path: 'chat/:id',
     component: ChatComponent,
     resolve: { messages: messagesResolver, discussion: discussionResolver },
   },
-  {
-    path: 'chat',
-    component: ChatComponent,
-  },
+  { path: 'calendar', component: ChatComponent },
+  { path: 'news', component: ChatComponent },
+  { path: 'alerts', component: ChatComponent },
 ];
