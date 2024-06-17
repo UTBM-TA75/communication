@@ -6,7 +6,9 @@ import { AppConfigService } from '@core/config/app-config.service';
 import { formatDate } from '@angular/common';
 import { Router } from '@angular/router';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class EventService {
   private readonly path = '/events';
 
