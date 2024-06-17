@@ -4,6 +4,7 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { messagesResolver } from '@shared/conversation/resolvers/messages.resolver';
 import { discussionResolver } from '@shared/conversation/resolvers/discussion.resolver';
 import { FormNewEventComponent } from './pages/calendar/components/form-new-event/form-new-event.component';
+import { NewsComponent } from './pages/news/news.component';
 import { CalendarComponent } from './pages/calendar/components/calendar/calendar.component';
 
 export const routes: Routes = [
@@ -16,6 +17,6 @@ export const routes: Routes = [
   },
   { path: 'calendar', component: CalendarComponent },
   { path: 'newevent', component: FormNewEventComponent },
-  { path: 'news', component: ChatComponent },
+  { path: 'news', component: NewsComponent },
   { path: 'alerts', component: ChatComponent },
 ];
