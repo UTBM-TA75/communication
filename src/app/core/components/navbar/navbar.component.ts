@@ -24,6 +24,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   isSidebarOpened: boolean = false;
+  focusedChild: number = 2;
 
   constructor(
     public sidebarService: SidebarService,
@@ -36,6 +37,10 @@ export class NavbarComponent {
 
   toggleSidebar(): void {
     this.sidebarService.toggleSidebar();
+  }
+
+  onClickChild(id: number) {
+    this.focusedChild = id;
   }
 
   onMenuItemClick(section: string) {

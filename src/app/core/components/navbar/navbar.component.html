@@ -16,11 +16,11 @@
     </button>
 
     <span class="ml-3">Nom d'utilisateur</span>
-    <button>
-      <span class="pl-[7rem] underline underline-offset-4">Enfant n°1</span>
+    <button (click)="onClickChild(1)">
+      <span class="pl-[7rem] {{ focusedChild === 1 ? 'underline underline-offset-4' : '' }}">Enfant n°1</span>
     </button>
-    <button>
-      <span class="pl-[5rem]">Enfant n°2</span>
+    <button (click)="onClickChild(2)">
+      <span class="pl-[5rem] {{ focusedChild === 2 ? 'underline underline-offset-4' : '' }}">Enfant n°2</span>
     </button>
 
     <span class="example-spacer"></span>
