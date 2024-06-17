@@ -117,22 +117,12 @@ input[type=submit]:focus{
   background-color:limegreen;
 }
 /* responsive bonus round */
-@media screen and (min-width:450px){
+@media screen and (min-width:450px) {
   /*  2col  */
-  .column{
-    width:50%;
-    float:left;
-    padding:3%;
-    box-sizing:border-box;
+  .column {
+    width: 50%;
+    float: left;
+    padding: 3%;
+    box-sizing: border-box;
   }
 }
-
-
-
-
-
-
-
-
-
-

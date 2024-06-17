@@ -8,10 +8,8 @@ describe('FormNewEventComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormNewEventComponent]
-    })
-    .compileComponents();
-    
+      imports: [FormNewEventComponent],
+    }).compileComponents();
     fixture = TestBed.createComponent(FormNewEventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
